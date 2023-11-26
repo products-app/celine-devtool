@@ -1,0 +1,1 @@
+export NewApp from './New'

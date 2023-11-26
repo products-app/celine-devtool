@@ -31,8 +31,8 @@ export function HomePage() {
 			<Header />
 			<main className="p-6">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">Apps</h1>
-          <Button><PlusIcon /><span className="font-bold pl-1">Criar nova app</span></Button>
+          <h1 className="text-3xl font-bold">Applications</h1>
+          <Link href="create"><Button><PlusIcon /><span className="font-bold pl-1">Criar nova app</span></Button></Link>
         </div>
 
         <DataTable value={apps} tableStyle={{ minWidth: '50rem' }}>
@@ -41,7 +41,6 @@ export function HomePage() {
           ))}
           <Column key="actions" field="url" header="Actions" />
         </DataTable>
-				{/* <Button className="flex gap-1 items-center" onClick={(e) => setCount(count + 1)}><PlusIcon /> Criar nova app</Button> */}
 			</main>
     </>
   );
