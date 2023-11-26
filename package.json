@@ -20,12 +20,14 @@
   },
   "homepage": "https://github.com/products-app/celine-devtool#readme",
   "dependencies": {
+    "@radix-ui/react-icons": "^1.3.0",
     "next": "^14.0.1",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primereact": "^10.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-nice-avatar": "^1.4.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,14 +1,11 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import RootStyleRegistry from './lib/StyleRegistry'
-
 import '../common/styles/globals.css'
-import 'primereact/resources/themes/saga-blue/theme.css';
+import type { Metadata } from 'next'
+import { Poppins } from 'next/font/google'
 import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primeicons/primeicons.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ weight: ['300', '400', '600', '700'],preload: false, })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,10 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>
-        <RootStyleRegistry>
+      <body className={poppins.className}>
           {children}
-        </RootStyleRegistry>
       </body>
     </html>
   )

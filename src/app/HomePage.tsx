@@ -1,14 +1,48 @@
 'use client'
-import {useState} from 'react';
-import {Button} from 'primereact/button';
+import Header from '@/components/Header';
+import { PlusIcon } from '@radix-ui/react-icons'
+import { Button } from 'primereact/button';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export function HomePage() {
-    const [count,setCount] = useState(0);
-    
-    return (
-        <div className="text-center">
-            <Button label="Click" icon="pi pi-plus" onClick={e => setCount(count + 1)}></Button>
-            <div className="text-2xl text-900 mt-3">{count}</div>
+  const apps = [{
+    id: 1,
+    name: <b>MyApp</b>,
+    team: 'Banking',
+    url: <a href="/my-app" className="text-teal-500 hover:underline">Acessar app</a>,
+    tecnologies: <>
+      <Image src="/python.svg" alt="svg" width={30} height={30} />
+    </>,
+    date: '26/11/2023 12:23:00',
+  }]
+
+  const columns = [
+    {field: 'name', header: 'Nome'},
+    {field: 'tecnologies', header: 'Main Tecnologies'},
+    {field: 'team', header: 'Time'},
+    {field: 'date', header: 'Última atualização'},
+];
+
+  return (
+    <>
+			<Header />
+			<main className="p-6">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold">Apps</h1>
+          <Button><PlusIcon /><span className="font-bold pl-1">Criar nova app</span></Button>
         </div>
-    );
+
+        <DataTable value={apps} tableStyle={{ minWidth: '50rem' }}>
+          {columns.map((col, i) => (
+            <Column key={col.field} field={col.field} header={col.header} />
+          ))}
+          <Column key="actions" field="url" header="Actions" />
+        </DataTable>
+				{/* <Button className="flex gap-1 items-center" onClick={(e) => setCount(count + 1)}><PlusIcon /> Criar nova app</Button> */}
+			</main>
+    </>
+  );
 }
