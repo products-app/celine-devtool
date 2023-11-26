@@ -8,6 +8,6 @@ export default function RootStyleRegistry({
   children: ReactNode;
 }) {
   return (
-    <PrimeReactProvider>{children}</PrimeReactProvider>
+    <PrimeReactProvider value={{ unstyled: true, pt: {} }}>{children}</PrimeReactProvider>
   );
 }
