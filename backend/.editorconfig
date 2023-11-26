@@ -1,0 +1,24 @@
+# see https://editorconfig.org/
+root = true
+
+[*]
+end_of_line = lf
+trim_trailing_whitespace = true
+indent_style = space
+insert_final_newline = true
+indent_size = 4
+charset = utf-8
+
+[*.py]
+max_line_length = 88
+
+[*.yml]
+indent_size = 2
+max_line_length = 88
+
+[Dockerfile]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+max_line_length = 88
