@@ -11,6 +11,7 @@ cookiecutter = "*"
 flask-cors = "*"
 python-dotenv = "*"
 waitress = "*"
+github="*"
 
 [dev-packages]
 flake8 = "*"
