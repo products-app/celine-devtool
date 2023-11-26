@@ -1,7 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import RootStyleRegistry from './lib/StyleRegistry'
 
 import '../common/styles/globals.css'
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        {children}
+        <RootStyleRegistry>
+          {children}
+        </RootStyleRegistry>
       </body>
     </html>
   )
